@@ -7,7 +7,7 @@ It exists because modeling internal and external threads as separate features of
 The solution implemented here is not slicer tuning or tighter tolerances.  
 It is geometry ownership and correct feature ordering.
 
----
+
 
 ## What the script does
 
@@ -20,7 +20,6 @@ The script performs the following operations, in order:
 
 The result is a thread pair that prints cleanly, engages smoothly, and behaves predictably without supports.
 
----
 
 ## Orientation and lead-in edge detection
 
@@ -38,7 +37,6 @@ This means:
 
 As long as the selected face is a true cylinder, the correct lead-in edge is identified.
 
----
 
 ## Required setup before running
 
@@ -50,7 +48,6 @@ Before running the script:
 
 The script does not align or move bodies.
 
----
 
 ## How to use
 
@@ -65,7 +62,6 @@ The script does not align or move bodies.
 7. Paste the `.py` file contents  
 8. Save  
 
----
 
 ### Run
 
@@ -80,8 +76,6 @@ When executed, the script will prompt you to:
   - This is intentional
 - Select the internal thread face on the mating body
 - Enter a clearance offset
-
----
 
 ## Clearance tuning
 
@@ -108,8 +102,6 @@ There is no universal correct value. Tune based on printer, material, and use ca
 
 If the fit tightens instead of loosens, flip the sign of the offset.
 
----
-
 ## Assumptions and limitations
 
 - Requires a clean cylindrical face
@@ -119,8 +111,6 @@ If the fit tightens instead of loosens, flip the sign of the offset.
 
 This script encodes a workflow, not a one-click solution.
 
----
-
 ## Intended use
 
 This is for:
@@ -129,7 +119,7 @@ This is for:
 - iterative mechanical parts
 - cases where thread behavior matters more than nominal dimensions
 
----
+
 ## Why boolean threading
 
 Creating matching thread features on two separate parts fails in practice because:
@@ -142,7 +132,6 @@ By modeling the thread once and subtracting it from the mating part, both parts 
 
 This removes a large class of failure modes.
 
----
 
 ## Why feature order matters
 
