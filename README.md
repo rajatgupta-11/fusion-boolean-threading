@@ -22,40 +22,6 @@ The result is a thread pair that prints cleanly, engages smoothly, and behaves p
 
 ---
 
-## Why boolean threading
-
-Creating matching thread features on two separate parts fails in practice because:
-
-- helix geometry is generated independently per feature
-- slicers discretize that geometry independently
-- small geometric differences stack immediately in printed threads
-
-By modeling the thread once and subtracting it from the mating part, both parts inherit the exact same geometry. Clearance is then applied explicitly instead of implicitly.
-
-This removes a large class of failure modes.
-
----
-
-## Why feature order matters
-
-Fusion allows chamfering before or after threading, but the order affects the resulting geometry.
-
-If the chamfer is applied incorrectly, Fusion often produces:
-
-- a sharp step at the start of the helix
-- a non-clean lead-in edge
-- poor first-turn engagement in printed parts
-
-This script enforces the following sequence:
-
-1. Create the modeled thread  
-2. Create the chamfer  
-3. Move the chamfer ahead of the thread in the timeline  
-
-Reordering forces Fusion to recompute the thread entry using the chamfered base geometry. This eliminates the stepped helix start that shows up immediately in prints.
-
----
-
 ## Orientation and lead-in edge detection
 
 The script determines the lead-in edge using the cylinder’s own axis, not world coordinates.
@@ -163,4 +129,37 @@ This is for:
 - iterative mechanical parts
 - cases where thread behavior matters more than nominal dimensions
 
-It is not intended as a tutorial or preset generator.
+---
+## Why boolean threading
+
+Creating matching thread features on two separate parts fails in practice because:
+
+- helix geometry is generated independently per feature
+- slicers discretize that geometry independently
+- small geometric differences stack immediately in printed threads
+
+By modeling the thread once and subtracting it from the mating part, both parts inherit the exact same geometry. Clearance is then applied explicitly instead of implicitly.
+
+This removes a large class of failure modes.
+
+---
+
+## Why feature order matters
+
+Fusion allows chamfering before or after threading, but the order affects the resulting geometry.
+
+If the chamfer is applied incorrectly, Fusion often produces:
+
+- a sharp step at the start of the helix
+- a non-clean lead-in edge
+- poor first-turn engagement in printed parts
+
+This script enforces the following sequence:
+
+1. Create the modeled thread  
+2. Create the chamfer  
+3. Move the chamfer ahead of the thread in the timeline  
+
+Reordering forces Fusion to recompute the thread entry using the chamfered base geometry. This eliminates the stepped helix start that shows up immediately in prints.
+
+---
