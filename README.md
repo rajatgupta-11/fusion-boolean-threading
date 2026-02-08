@@ -2,12 +2,7 @@
 
 This script automates a specific workflow for creating reliable 3D-printed threads in Fusion 360.
 
-It exists because modeling internal and external threads as separate features often looks correct in CAD but fails in prints. Threads end up uneven, crunchy, misaligned, or require excessive force to engage, even when nominal dimensions and tolerances check out.
-
-The solution implemented here is not slicer tuning or tighter tolerances.  
-It is geometry ownership and correct feature ordering.
-
-
+It exists because modeling internal and external threads as separate features often looks correct in CAD but fails in prints. Threads end up uneven, crunchy, misaligned, or require excessive force to engage, even when nominal dimensions and tolerances check out. Makes the process automated, safe, repeatable. 
 
 ## What the script does
 
