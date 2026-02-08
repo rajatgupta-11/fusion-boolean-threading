@@ -1,4 +1,4 @@
-Fusion 360 Boolean Threading Script
+#Fusion 360 Boolean Threading Script
 
 This script automates a specific workflow for creating reliable 3D-printed threads in Fusion 360.
 
