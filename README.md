@@ -1,6 +1,6 @@
 # Fusion 360 Boolean Threading Script
 
-This script automates a specific workflow for creating reliable 3D-printed threads in Fusion 360. Makes thread modeling automated, safe, repeatable. 
+This script automates a specific workflow for creating reliable 3D-printed threads in Fusion 360 makinging modeling safe and repeatable. 
 
 ## What the script does
 
